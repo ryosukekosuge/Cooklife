@@ -1,22 +1,45 @@
 <div class ="container">
- <div class="col-xs-10">
-  <div class="main-image">
-   <div class="main-text">
-    <p>
+ <div class="row">
+  <div class="col-xs-3">
+   <% if user_signed_in? %>
+    <h2>会員情報</h2>
+     <table class="table">
+      <%= attachment_image_tag @user, :profile_image, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg",  size: "100x100"%>
+
+      <tr>
+        <th>名前</th>
+        <th><%= @user.name %></th>
+      </tr>
+      <tr>
+        <th>自己紹介</th>
+        <th><%= @user.introduction %></th>
+      </tr>
+    </table>
+     <div class="row">
+      <tr>
+       <th> <%= link_to "会員情報編集" , edit_user_path(@user), class: 'btn btn-primary' %> </th>
+      </tr>
+     </div>
+     <div class="row">
+      <tr>
+     <th> <%= link_to "レシピを書く" ,  new_recipe_path, class: 'btn btn-success' %> </th>
+      </tr>
+     </div>
+    </table>
+<% end %>
+  </div>
+  <div class="col-xs-9">
+   <div class="main-image">
+    <div class="main-text">
+     <p>
       自宅で料理を楽しもう！<br>
       このサイトは料理を手軽に検索できるサイトです。 <br>
-      会員でない方も閲覧はできますが、<br>
-      登録するとレシピ投稿やブックマーク機能を使え
+      会員でない方も閲覧はできますが、
+      登録するとレシピ投稿やコメント機能が使え <br>
       より便利に本サイトを利用することができます。<br>
-    </p>
-   </div>
-  </div>
-  <div class="row">
-   <div class="col-xs-3">
-  <%= render 'homes/homeinfo' %>
-   </div>
- </div>
-
+     </p>
     </div>
    </div>
+  </div>
  </div>
+</div>

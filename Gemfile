@@ -70,4 +70,5 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
+gem 'nested_form_fields'
 end

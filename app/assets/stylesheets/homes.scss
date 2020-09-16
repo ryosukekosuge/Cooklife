@@ -6,7 +6,16 @@
 	display: flex;
   	justify-content: center;
   	align-items: center;
-  	height: 200px;
-  	width: 400px;
+  	height: 600px;
+  	width: 600px;
   	margin: auto;
+}
+
+.main-image {
+	margin-top: 50px;
+	padding-top: 200px;
+	height: 400px;
+	background-image: url(main-image.jpg);
+	background-size: cover;
+	text-align: center;
 }
